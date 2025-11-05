@@ -10,8 +10,8 @@ struct Node {
     vector<int> path; // path taken so far
     vector<vector<int>> reducedMatrix;
     int cost;
-    int vertex; // current city
-    int level;  // depth in tree
+    int vertex;
+    int level;  
 };
 
 int reduceMatrix(vector<vector<int>>& mat) {
@@ -56,7 +56,7 @@ Node* newNode(vector<vector<int>> parentMatrix, vector<int> const &path, int lev
         node->reducedMatrix[i][k] = INF;
         node->reducedMatrix[k][j] = INF;
     }
-    node->reducedMatrix[j][0] = INF; // prevent returning to start too early
+    node->reducedMatrix[j][0] = INF; 
 
     return node;
 }
@@ -123,7 +123,6 @@ int tspLC(vector<vector<int>> costMatrix) {
 }
 
 int main() {
-    // Example cost matrix (0 means same city)
     vector<vector<int>> costMatrix = {
         {INF, 10, 15, 20},
         {10, INF, 35, 25},
