@@ -7,7 +7,7 @@ using namespace std;
 struct Item {
     double utility;
     double weight;
-    double ratio;  // utility per weight
+    double ratio;  
 };
 
 bool compare(Item a, Item b) {
@@ -25,7 +25,6 @@ double fractionalKnapsack(vector<Item>& items, double capacity) {
             totalUtility += item.utility;
             remaining -= item.weight;
         } else {
-            // Take fractional part
             totalUtility += item.ratio * remaining;
             break;
         }
