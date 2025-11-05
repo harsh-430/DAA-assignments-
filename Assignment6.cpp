@@ -80,7 +80,7 @@ int main() {
     boostPerishableUtility(items);
     int maxUtility = knapsackDP(items, truckCapacity);
 
-    cout << "\n📦 Maximum Total Utility (using DP): " << maxUtility << endl;
+    cout << "\n Maximum Total Utility (using DP): " << maxUtility << endl;
     return 0;
 }
 
