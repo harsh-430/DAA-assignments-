@@ -64,7 +64,7 @@ void printOrders(const vector<Order>& orders, int limit = 10) {
 }
 
 int main() {
-    int n = 20; // number of orders (can increase up to 1 million)
+    int n = 20; 
     vector<Order> orders = generateOrders(n);
 
     cout << "Orders before sorting:\n";
