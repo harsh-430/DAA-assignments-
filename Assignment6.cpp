@@ -27,7 +27,7 @@ void displaySelectedItems(vector<vector<int>>& dp, vector<Item>& items, int capa
     cout << "\nItems loaded in the truck:" << endl;
     while (i > 0 && w > 0) {
         if (dp[i][w] != dp[i - 1][w]) {
-            cout << "✅ Item " << items[i - 1].id
+            cout << " | Item " << items[i - 1].id
                  << " | Weight: " << items[i - 1].weight
                  << " | Utility: " << items[i - 1].utility
                  << " | Perishable: " << (items[i - 1].perishable ? "Yes" : "No")
@@ -88,11 +88,11 @@ int main() {
 SwiftCargo - Truck Loading Optimization (Knapsack with Perishables)
 
 Items loaded in the truck:
-✅ Item 3 | Weight: 30 | Utility: 144 | Perishable: Yes
-✅ Item 5 | Weight: 15 | Utility: 90 | Perishable: Yes
-✅ Item 1 | Weight: 10 | Utility: 72 | Perishable: Yes
+Item 3 | Weight: 30 | Utility: 144 | Perishable: Yes
+Item 5 | Weight: 15 | Utility: 90 | Perishable: Yes
+Item 1 | Weight: 10 | Utility: 72 | Perishable: Yes
 Total Weight Loaded: 55 kg
 
-📦 Maximum Total Utility (using DP): 306
+Maximum Total Utility (using DP): 306
 */
 
