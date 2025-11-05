@@ -23,13 +23,11 @@ bool cmpPopularity(const Movie &a, const Movie &b) {
     return a.popularity > b.popularity;
 }
 
-// Partition function for quicksort
 int partition(vector<Movie> &movies, int low, int high, bool (*cmp)(const Movie&, const Movie&)) {
     Movie pivot = movies[high]; 
     int i = low - 1;            
 
     for (int j = low; j < high; j++) {
-        // If movies[j] should come before pivot according to cmp, swap it forward
         if (cmp(movies[j], pivot)) {
             i++;
             swap(movies[i], movies[j]);
