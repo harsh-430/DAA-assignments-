@@ -10,7 +10,6 @@ struct Item {
     double ratio;  // utility per weight
 };
 
-// Compare to sort by ratio descending
 bool compare(Item a, Item b) {
     return a.ratio > b.ratio;
 }
