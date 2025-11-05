@@ -6,7 +6,6 @@ using namespace std;
 
 const int INF = 1e9;
 
-// Structure to represent a node in the Branch and Bound tree
 struct Node {
     vector<int> path; // path taken so far
     vector<vector<int>> reducedMatrix;
@@ -15,7 +14,6 @@ struct Node {
     int level;  // depth in tree
 };
 
-// Function to reduce matrix and return the reduction cost
 int reduceMatrix(vector<vector<int>>& mat) {
     int reduction = 0;
     int n = mat.size();
@@ -57,7 +55,6 @@ Node* newNode(vector<vector<int>> parentMatrix, vector<int> const &path, int lev
     node->level = level;
     node->reducedMatrix = parentMatrix;
 
-    // Set outgoing edges for city i and incoming edges for city j as INF
     for (int k = 0; k < n; k++) {
         node->reducedMatrix[i][k] = INF;
         node->reducedMatrix[k][j] = INF;
@@ -67,14 +64,12 @@ Node* newNode(vector<vector<int>> parentMatrix, vector<int> const &path, int lev
     return node;
 }
 
-// Custom comparator for priority queue (lowest cost first)
 struct CompareCost {
     bool operator()(const Node* a, const Node* b) const {
         return a->cost > b->cost;
     }
 };
 
-// LC Branch and Bound algorithm for TSP
 int tspLC(vector<vector<int>> costMatrix) {
     int n = costMatrix.size();
     priority_queue<Node*, vector<Node*>, CompareCost> pq;
@@ -130,7 +125,6 @@ int tspLC(vector<vector<int>> costMatrix) {
     return minCost;
 }
 
-// Example usage
 int main() {
     // Example cost matrix (0 means same city)
     vector<vector<int>> costMatrix = {
