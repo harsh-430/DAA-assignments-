@@ -18,7 +18,6 @@ int reduceMatrix(vector<vector<int>>& mat) {
     int reduction = 0;
     int n = mat.size();
 
-    // Row reduction
     for (int i = 0; i < n; i++) {
         int rowMin = INF;
         for (int j = 0; j < n; j++)
@@ -31,7 +30,6 @@ int reduceMatrix(vector<vector<int>>& mat) {
         }
     }
 
-    // Column reduction
     for (int j = 0; j < n; j++) {
         int colMin = INF;
         for (int i = 0; i < n; i++)
@@ -47,7 +45,6 @@ int reduceMatrix(vector<vector<int>>& mat) {
     return reduction;
 }
 
-// Create a new node
 Node* newNode(vector<vector<int>> parentMatrix, vector<int> const &path, int level, int i, int j) {
     int n = parentMatrix.size();
     Node* node = new Node;
